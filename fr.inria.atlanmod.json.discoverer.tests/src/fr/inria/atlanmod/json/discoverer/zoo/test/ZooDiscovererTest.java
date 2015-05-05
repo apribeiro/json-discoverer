@@ -18,12 +18,12 @@ import fr.inria.atlanmod.json.discoverer.zoo.ZooDiscoverer;
 
 public class ZooDiscovererTest {
 	public static void main(String[] args) {
-		ZooDiscoverer zooDiscoverer = new ZooDiscoverer(new File("../fr.inria.atlanmod.json.discoverer.zoo/zooMini"));
+		ZooDiscoverer zooDiscoverer = new ZooDiscoverer(new File("../fr.inria.atlanmod.json.discoverer.zoo/zoo"));
 		zooDiscoverer.discover(true);
 		
 		ModelDrawer drawer = new ModelDrawer(
-				new File("C:/Users/useradm/git/json-discoverer/fr.inria.atlanmod.json.discoverer.zoo/workingDir"), 
-				new File("C:/Program Files (x86)/Graphviz 2.28/bin/dot.exe"));
-		drawer.traverseAndDrawFolder(new File("../fr.inria.atlanmod.json.discoverer.zoo/zooMini"), true);
+				new File("C:/Users/User/Desktop/workspace/json-discoverer-master/fr.inria.atlanmod.json.discoverer.zoo/"), 
+				new File("C:/Users/User/Desktop/graphviz-2.38/bin/dot.exe"));
+		drawer.traverseAndDrawFolder(new File("C:/Users/User/Desktop/workspace/json-discoverer-master/fr.inria.atlanmod.json.discoverer.zoo/zoo"), true);
 	}
 }

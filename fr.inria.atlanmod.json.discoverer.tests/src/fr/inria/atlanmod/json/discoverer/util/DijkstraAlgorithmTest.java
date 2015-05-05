@@ -1,23 +1,18 @@
 package fr.inria.atlanmod.json.discoverer.util;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import fr.inria.atlanmod.discoverer.AnnotationHelper;
 import fr.inria.atlanmod.discoverer.CoreographyBuilder;
-import fr.inria.atlanmod.discoverer.util.DijkstraSolver;
 
 public class DijkstraAlgorithmTest {
 	public static void main(String[] args) {
