@@ -3,7 +3,7 @@
   <opendata request="http://data.nantes.fr/api/getFluiditeAxesRoutiers/1.0/39W9VSNCSASEOGV/?output=json">
     <answer>
       <status>
-        <@attributes code="0" message="OK"/>
+        <attributes code="0" message="OK"/>
       </status>
       <data>
         <Troncons Horodatage="2013-11-27T10:42:03">

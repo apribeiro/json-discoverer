@@ -116,7 +116,7 @@
       <specials/>
       <hereNow/>
     </venues>
-    <venues id="4fcbbbf6e4b03cf73d3d9338" name="Sushi Fusion Ten'Kei" verified="true" restricted="true" url="http://www.tenkei.fr" referralId="v-1385733223">
+    <venues id="4fcbbbf6e4b03cf73d3d9338" name="Sushi Fusion Ten'Kei" verified="true" restricted="true" url="http://www.tenkei.fr" referralId="v-1385733223" storeId="Sushi Fusion TEN'KEI">
       <contact phone="+33761900044" formattedPhone="+33 7 61 90 00 44"/>
       <location address="Rue De La Maison Neuve" lat="47" lng="-1" distance="7353" postalCode="44800" cc="FR" city="Saint-Herblain" state="Loire-Atlantique" country="France"/>
       <categories id="4bf58dd8d48988d1d2941735" name="Restaurante de sushi" pluralName="Restaurantes de sushi" shortName="Sushi" primary="true">
@@ -125,6 +125,7 @@
       <stats checkinsCount="35" usersCount="16" tipCount="3"/>
       <specials/>
       <hereNow/>
+      <venuePage id="44269026"/>
     </venues>
   </response>
 </discop:picturesOfThePlace>
