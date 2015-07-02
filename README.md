@@ -37,6 +37,7 @@ Requirements:
 * EMF 2.8 or above
 * MoDisco 0.10 or above
 * Xtext 2.3 or above
+* EMF To Graphviz (emf2gv)
 
 The project fr.inria.atlanmod.json.web is a stand-alone project, meaning that it includes the needed libraries to execute the tool out of Eclipse.
 
