@@ -22,8 +22,8 @@ public class FenixDiscovererTest {
 		zooDiscoverer.discover(true);
 		
 		ModelDrawer drawer = new ModelDrawer(
-				new File("C:/Users/User/Desktop/workspace/json-discoverer-master/fr.inria.atlanmod.json.discoverer.zoo/"), 
-				new File("C:/Users/User/Desktop/graphviz-2.38/bin/dot.exe"));
-		drawer.traverseAndDrawFolder(new File("C:/Users/User/Desktop/workspace/json-discoverer-master/fr.inria.atlanmod.json.discoverer.zoo/fenix-test"), true);
+			new File("../fr.inria.atlanmod.json.discoverer.zoo/"), 
+			new File("../graphviz-2.38/bin/dot.exe"));
+		drawer.traverseAndDrawFolder(new File("../fr.inria.atlanmod.json.discoverer.zoo/fenix-test"), true);
 	}
 }
