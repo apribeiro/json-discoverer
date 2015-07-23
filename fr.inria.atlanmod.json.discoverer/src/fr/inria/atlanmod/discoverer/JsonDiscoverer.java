@@ -215,6 +215,16 @@ public class JsonDiscoverer {
 		} else {
 			eStructuralFeature = EcoreFactory.eINSTANCE.createEReference();
 			((EReference) eStructuralFeature).setContainment(true);
+			
+			//create eOpposite
+			EReference eOppositeFeature = EcoreFactory.eINSTANCE.createEReference();
+			eOppositeFeature.setName(eClass.getName().toLowerCase());
+			eOppositeFeature.setLowerBound(1);
+			eOppositeFeature.setUpperBound(1);
+			eOppositeFeature.setEType(eClass); 
+			eOppositeFeature.setEOpposite(((EReference) eStructuralFeature));
+			eClass.getEStructuralFeatures().add(eOppositeFeature);
+			((EReference) eStructuralFeature).setEOpposite(eOppositeFeature);
 		}
 
 		if(value.isJsonArray()) {
