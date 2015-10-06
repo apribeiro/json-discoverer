@@ -154,7 +154,7 @@ public class JsonDiscoverer {
 			String pairId = pair.getKey();
 			JsonElement value = pair.getValue();
 
-			createStructuralFeature(pairId, value, 1, eClass);
+			createStructuralFeature(pairId, value, 0, eClass);
 		}
 		return eClass;
 	}
@@ -192,7 +192,7 @@ public class JsonDiscoverer {
 
 				}
 			} else {
-				createStructuralFeature(pairId, value, 0, eClass);
+				createStructuralFeature(pairId, value, 1, eClass);
 			}
 		}
 
@@ -212,19 +212,9 @@ public class JsonDiscoverer {
 
 		if(type instanceof EDataType) {
 			eStructuralFeature = EcoreFactory.eINSTANCE.createEAttribute();
-		} else {
+		} else if(type instanceof EClass) {
 			eStructuralFeature = EcoreFactory.eINSTANCE.createEReference();
 			((EReference) eStructuralFeature).setContainment(true);
-			
-			//create eOpposite
-			EReference eOppositeFeature = EcoreFactory.eINSTANCE.createEReference();
-			eOppositeFeature.setName(eClass.getName().toLowerCase());
-			eOppositeFeature.setLowerBound(1);
-			eOppositeFeature.setUpperBound(1);
-			eOppositeFeature.setEType(eClass); 
-			eOppositeFeature.setEOpposite(((EReference) eStructuralFeature));
-			eClass.getEStructuralFeatures().add(eOppositeFeature);
-			((EReference) eStructuralFeature).setEOpposite(eOppositeFeature);
 		}
 
 		if(value.isJsonArray()) {
@@ -238,6 +228,19 @@ public class JsonDiscoverer {
 			AnnotationHelper.INSTANCE.increaseTotalFound(eStructuralFeature);
 			eClass.getEStructuralFeatures().add(eStructuralFeature);
 			LOGGER.fine("[createStructuralFeature] " + eStructuralFeature.getClass().getSimpleName() + " created with name " + pairId + " type " + eStructuralFeature.getEType().getName() + " and lower bound " + lowerBound);
+			
+			if(type instanceof EClass) {
+				//create eOpposite
+				EReference eOppositeFeature = EcoreFactory.eINSTANCE.createEReference();
+				eOppositeFeature.setName(eClass.getName().toLowerCase());
+				eOppositeFeature.setLowerBound(1);
+				eOppositeFeature.setUpperBound(1);
+				eOppositeFeature.setEType(eClass); 
+				eOppositeFeature.setEOpposite(((EReference) eStructuralFeature));
+				EClass opposite = (EClass)type;
+				opposite.getEStructuralFeatures().add(eOppositeFeature);
+				((EReference) eStructuralFeature).setEOpposite(eOppositeFeature);
+			}
 		}
 	}
 
