@@ -154,7 +154,7 @@ public class JsonDiscoverer {
 			String pairId = pair.getKey();
 			JsonElement value = pair.getValue();
 
-			createStructuralFeature(pairId, value, 0, eClass);
+			createStructuralFeature(pairId, value, 1, eClass);
 		}
 		return eClass;
 	}
@@ -192,7 +192,7 @@ public class JsonDiscoverer {
 
 				}
 			} else {
-				createStructuralFeature(pairId, value, 1, eClass);
+				createStructuralFeature(pairId, value, 0, eClass);
 			}
 		}
 
